@@ -1,0 +1,199 @@
+EXERCISE 22:    What Have I Learned So Far?
+
+#                 =   The hash is used to disable code or for writing comments.
+""" __ """        =   These are documentation comments. Can be used in functions to document what they do and can be seen with the help(_module_).
+variable          =   A variable is like a empty box to put values and such in. A piece of RAM memory is reserved.
+if-statement      =   Let's you make decisions in your code. Test truth of code, based on that truth, run someing else or not.
+for loop          =   Is a loop that iterates through thing a certain times and then stops.
+while loop        =   This loop will keep executing the code block under it as long as a boolean expression is True.
+                      The last value of a variable in a for-loop is set. That last value will NOT be removed
+{}                =   These are to create a placeholder for variables inside a string or f-string.
+encode            =   It's an agreed upon standard for how a sequence of bits (00000000 - 11111111) should represent to a number.
+decode            =   It's the reverse of encode above.
+unicode           =   Is a specification that aims to list every character used by human languages and give each character its own unique code.
+ASCII             =   This standard maps a number to a letter.      (American Standard Code for Information Interchange.)
+                      The number 90 is Z, which in bits is 1011010, which gets mapped to the ASCII table inside the computer.
+UTF-8             =   Unicode Transformation Format-8 Bits.         --->          (2^8)
+UTF-16            =   Unicode Transformation Format-16 Bits.        --->          (2^16)        --->
+UTF-32            =   Unicode Transformation Format-32 Bits.        --->          (2^32)        --->          4Mil+ characters
+                      It's the current standard convention for encoding Unicode characters into sequences of bytes.
+b'                =   Let Python know you are working with raw data. (Bytes)
+
+'DBES'            =   Mnemonic for 'Decode Bytes Encode Strings'. Used for remembering convertion bytes to string.
+ordinal numbers   =   These are numbers that indicate an order of things.       ("Who placed first in a race? And who second? e.t.c")
+cardinal numbers  =   These are numbers that programmers use.
+                      Numbers in a list can be picked at random. Therefore
+                      there must be a element '0'.
+
+
+## ERRORS ##
+
+Exceptions        =   Errors that are detected during an execution are called exceptions.
+SyntaxError       =   This error is raised when Python detects
+                      a syntax (spelling) error inside you code.
+ValueError        =   This error is raised when Python encounters
+NameError         =   Error raised when a variable is not defined or ... ###############
+ImportError       =   Raised when a local or global name is not found.
+IndexError        =   This error is raised when a sequence subscript is out of range or if an index is not a integer.
+ZeroDivisionError =   Raised when the second argument of a division or modulo operation is zero.
+TypeError         =   When an object does not support attribute references or
+                      attribute assignments at all.                             ( tuple.strip() )
+UnboundLocalError =   Error is raised when a reference is made
+                      to a local variable in a function or method,
+                      but no value has been bound to that variable.
+IndentationError  =   This error is raised when Python expected an indented block.
+                      In other words; Python discovered a wrong indented piece of code.
+try:              =   Error handling in Python is done through the use of exceptions,
+except:               that are caught in try blocks and handled in except blocks.
+
+
+
+print("")       =   The print function prints stuff out on screen.
+print(f"")      =   The f-string is used for variables in {placeholders} that are not already divined.
+.encode()       =   Method used to encode strings to raw data / bytes.
+.decode()       =   Method used to decode raw data / bytes to strings.
+.format()       =   Built-in function to format variables into a string.
+.format(* )     =   Is used to place more then one variable in placeholders.
+.input()        =   This built-in function asks the user for a input.
+.randint(a,b)   =   This function returns a random integer                      (Can only be used if random is imported.)
+                    between start(a) and end(b).
+
+  ## FILES ##
+.open()         =   Built-in function to open a file. Creates a file object by default in mode 'r'
+.read()         =   Method to read a file object.
+.readline()     =   Method to read a single line in a file.
+.write()        =   Method to write something in a file.
+.truncate()     =   Method is used to delete a file.           -->              (Use with care)
+.seek(0)        =   Method sets the read head to position 0.
+.close()        =   Method to close a file.
+
+
+.chr()          =   Method to return a character from a integer.                (Represents Unicode code point of the character.)
+.strip()        =   Function to remove the 'white space' IN a string.           (Or what's appointed inside the parentheses.)
+                                                                                print("Howdy\n".strip())
+.lstrip()       =   Function to remove 'white space' at the left side a string. (Or what's appointed inside the parentheses.)
+.rstrip()       =   Function to remove 'white space' at the right side a string.(Or what's appointed inside the parentheses.)
+.split()        =   Function to splits words in a string. Making a list.
+                    In the parenthesis should define where to split.
+.split()[_]     =   The split function can also take a index.
+                    From a string to a list to 1 or more items in that list
+
+  ## CLASSES ##
+class           =   Classes are used to create new user-defined data structure
+                    that contain arbitrary information about something.
+                    Classes just provides structure like a blueprint for how something
+                    should be defined. It doesn't provide any real content itself.
+
+  ## DICTIONARY ##
+
+.get()          =   This method is used to get the key or value of a dictionary.
+
+
+  ## LISTS ##
+
+[]              =   These are used in making a list. ['Item 1', 'Item 2']
+_list_[:]       =   Can be used to make a copy of a list. Slices from beginning to end of index
+_list_[4:]      =   Slices from index position 4 till the last available index.
+_list_[:4]      =   Slices from the first index till (not including) index nr.4
+_list_[-1]      =   Going backwards in a list. Prints 1 last  item.
+_list_[-2]      =   Going backwards in a list. Prints the last 2 items. etc.
+2D lists        =   That's what's called a list in a list                       [[1,2,3],[4,5,6]]
+
+.append()       =   This is a function to add something to a list.
+.clear()        =   Removes all items from a list.
+.copy()         =   Return a shallow copy of a lists.
+.count()        =   Returns a number of occurrences in a list.
+.extend()       =   Extend list by appending elements from the iterable.
+.index()        =   Return first index of value.
+.insert()       =   Insert object before index.                                 .insert(index,item)
+.pop()          =   Remove and RETURN item at index (default last).
+                    It takes a single argument (index) and removes
+                    the item present at that index.
+.remove()       =   Remove first occurrence of value.
+.reverse()      =   Reverse items in a list.
+.sort()         =   Sorts items in a list alphabetically.
+
+
+str()           =   This will convert what's between the parenthesis to string.
+lst()           =   This will convert what's between the parenthesis to list.
+int()           =   This will convert what's between the parenthesis to a integer number.
+float()         =   This will convert what's between the parenthesis to a float number.
+len()           =   This will return the length of a sequence or collection.
+range()         =   This function returns a sequence of numbers,
+                    starting from 0 by default, and increments by 1 (by default),
+                    and ends at a specified number.
+exit(0)         =   This is a 'good' exit. The number passed in it will indicate an error or not.
+                    EX: exit(100) is a diffrent error the exit(2).
+
+
+def             =   Stands for: DEFine. To create a function.   -->             ( def my_function_name(arg1, arg2): )
+from x import y =   To load modules into your program.          -->             ( SEE: Python Standard Library.)
+from x import * =   x stands for the module and * stands for 'all'. This is a easy way to import everything at once form that module.
+modules         =   Kind of like feahters to add to you program. Import a module form (see above) and use the code (feahters) inside in your own program.
+help(_module_)  =   Will show you what is inside the module. (Very handy if you don't know how to use that module.)
+argv            =   Most common used argument variable name for programmers. To unpack variables. (sys.argv)
+
+
+
+## ESCAPE SEQUENCES ##
+
+\n              =   The NEWLINE escape sequence. This will create a newline in a string.
+\t              =   The TAB escape sequence. This will create an indent on a line in a string.
+\v              =   The VERTICAL TABS does the same as a normal TAB only it will add a NEWLINE ('\n').
+\a              =   The BELL escape sequence. When Python runs \a, a sound is produced by you computer.
+\b              =   This stands for Backspace. It will remove the character to which it's placed afther.
+\r              =   The CARRIAGE RETURN will replace all the characters before '/r' with alle the characters that came afther.
+\xhh            =   Character with hex value hh                 # --?
+\ooo            =   Character with octal value ooo              # --?
+\uxxxx          =   Character with 16-bit hex value xxxx        # --?
+\Uxxxxxxxx      =   character with 32-bit hex value xxxxxxxx    # --?
+
+\\              =   The last '/' will been seen as a string and not be reconized as the beginning of an escape sequence
+                    Some characters in a string can stop the string. By placing 2 '/', Python thinks it's still part of the string.
+
+
+## MATH ##
+
++               =   Addition
+                    Adds (thinks like) integer (can concatenate string and sorts.)
+-               =   Subtraction
+
+/               =   Division                                    -->             (4 / 2 = 2)
+//              =   Floor Division                              -->             (3 // 4 = 0)    -> (3 / 4 = 0.75)
+                    Divides and returns the integer value.
+                    It dumps the digits after the decimal.
+*               =   Multiplication                              -->             (2 * 2 = 4)
+**              =   Exponent                                    -->             (4 ** 4 = 256)  ->  [4 * 4 * 4  *4]
+%               =   Modulo                                      -->             (7 % 2 = 1)     ->  1 remains when 7 is divided by 2 (3times)
+                    Divides and returns the value of the remainder.
+.round()        =   Method to round floating points up or down.
+
+
+
+## LOGICAL OPERATORS ##
+
+and       =   Is True when both are true.
+or        =   Evaluates to true if at least one of both side of the operator is true.
+not       =   Evaluates to true only if false.
+is        =   Evaluates to true if the variables on either side of the operator
+              point to the same object and false otherwise
+is not    =   Evaluates to true if the variables on either side of the operator
+              point to the same object and false otherwise
+
+
+## MEMBERSHIP OPERATORS ##
+
+in        =   Evaluates to true if it finds a variable
+              in the specified sequence and false otherwise.
+not in    =   Evaluates to true if it does not finds a variable
+              in the specified sequence and false otherwise
+
+<         =   Less then
+>         =   Greater then
+<=        =   Less then or equal to
+>=        =   Greater then or equal to
+==        =   Equal to
+!=        =   Not equal to
+
++=        =   Increment by                                                      (num += 1) == (num = num + 1)
+-=        =   Increment by                                                      (num -= 1) == (num = num - 1)

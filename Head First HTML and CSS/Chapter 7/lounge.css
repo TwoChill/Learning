@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+/* This rule makes all tekst inside the h1 and h2 tags gray.*/
+h1, h2 {
+  color: gray;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+p {
+  color: maroon;
+}
+
+p.blueberry {
+  color: purple
+}
+
+p.greentea {
+  color: green
+}
+
+p.raspberry {
+  color: blue
+}
