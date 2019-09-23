@@ -1,75 +1,90 @@
-## Animal is-a object
+# Animal is-a object
 class Animal(object):
-    pass
+    print("I is Animal")
 
-## Dog is-a object Animal
+# Dog is-a object Animal
+
+
 class Dog(Animal):
 
     def __init__(self, name):
-        ## That has-a attribute name
+        # That has-a attribute name
         self.name = name
 
-## Cat is-a object
+# Cat is-a object
+
+
 class Cat(Animal):
 
     def __init__(self, name):
-        ## That has-a attribute name
+        # That has-a attribute name
         self.name = name
 
-## Person is a object
+# Person is a object
+
+
 class Person(object):
 
     def __init__(self, name):
-        ## That has-a attribute name
+        # That has-a attribute name
         self.name = name
 
-        ## That also has-a attribute pet of some kind
+        # That also has-a attribute pet of some kind
         self.pet = None
 
-## Employee is-a object
-class Employee(object):
+# Employee is-a object
+
+
+class Employee(Person):
 
     def __init__(self, name, salary):
-        ## Employee has-a super() function that lets child classes inherit certain attributes?
-        super().__init__(name)
-        ## Employee has-a attribute named salary
+        # Employee has-a super() method that taks name from parent class Person.
+        super(Employee, self).__init__(name)
+        # Employee has-a attribute named salary
         self.salary = salary
 
-## Fish is-a object
+# Fish is-a object
+
+
 class Fish(object):
     pass
 
-## Salamon is-a object
-class Salamon(Fish):
+# Salmon is-a object
+
+
+class Salmon(Fish):
     pass
 
-## Halibut is-a object
+# Halibut is-a object
+
+
 class Halibut(Fish):
     pass
 
-## rover is-a Dog
+
+# rover is-a Dog
 rover = Dog('Rover')
 
-## satan is-a Cat
+# satan is-a instance of class Cat.
 satan = Cat('Satan')
 
-## mary is-a person
+# mary is-a instance of class Person
 mary = Person("Mary")
 
-## mary has-a pet named satan
+# mary has-a attribute pet named satan
 mary.pet = satan
 
-## frank is-a Employee and has-a salary
+# frank is-a instance of class Employee
 frank = Employee('Frank', 100000)
 
-## Frank has-a pet called rover
+# Frank has-a attribute pet named rover
 frank.pet = rover
 
-## flipper is-a instance of class Fish()
+# flipper is-a instance of class Fish
 flipper = Fish()
 
-## ??
+# crouse is a instance of class Salmon
 crouse = Salmon()
 
-## ??
+# Harry is a instance of class Halibut
 harry = Halibut()
