@@ -40,17 +40,22 @@ class Employee:
     def static_func():
         pass
 
+class Developer(Employee):
+    pass
 
-# Create instanse of Class Employee
+# Create instanse of Class Employee / Developer
 emp_1 = Employee('Michael', 'Python', 50000)  # Initsiate with init arugments
-emp_2 = Employee('Maud', 'Ruby', 40000)  # Initsiate with init arugments
+dev_1 = Developer('Maud', 'Ruby', 40000)  # Initsiate with init arugments
+# print(help(Developer))
 
 #==================================================================#
 #==================================================================#
 #==================================================================#
 
 print(emp_1.fullname())
-print(emp_1.email, '\n')
+print(emp_1.fullname())
+print(dev_1.email, '\n')
+print(dev_1.email, '\n')
 
 #==================================================================#
 # Class methode is called and printed out.
@@ -59,17 +64,17 @@ print(f'{emp_1.fullname()} got a raise. (* {emp_1.raise_amount_var})')
 emp_1.apply_raise()
 print(f'{emp_1.fullname()} has a pay of {emp_1.pay}\n')
 #------------------------------------------------------------------#
-print(f'{emp_2.fullname()} has a pay of {emp_2.pay}')
-print(f'{emp_2.fullname()} got a raise. (* {emp_2.raise_amount_var})')
-emp_2.apply_raise()
-print(f'{emp_2.fullname()} has a pay of {emp_2.pay}\n')
+print(f'{dev_1.fullname()} has a pay of {dev_1.pay}')
+print(f'{dev_1.fullname()} got a raise. (* {dev_1.raise_amount_var})')
+dev_1.apply_raise()
+print(f'{dev_1.fullname()} has a pay of {dev_1.pay}\n')
 
 #==================================================================#
 # With (<instance>.__dict__) you can see what values that instance or class has.
 
 # print(Employee.__dict__)
 print(emp_1.__dict__)
-# print(emp_2.__dict__)
+# print(dev_1.__dict__)
 
 #==================================================================#
 # You can change the class variable of the entere class OR just for a instance
@@ -99,22 +104,25 @@ print('Number of employees:', Employee.num_of_emps)
 Employee.set_raise_amount(1.25)
 
 print(Employee.raise_amount_var)
-print(emp_2.raise_amount_var, '\n')
-# #==================================================================#
+print(dev_1.raise_amount_var, '\n')
 
 # Using Alternative Constructors
 
 new_emp_1 = 'John-Doe-90000'
-new_emp_2 = 'Kim-Jane-80000'
+new_dev_1 = 'Kim-Jane-80000'
 new_emp_3 = 'Doe-John-190000'
 
 
 emp_3 = Employee.from_string(new_emp_1)
-emp_4 = Employee.from_string(new_emp_2)
+emp_4 = Employee.from_string(new_dev_1)
 emp_5 = Employee.from_string(new_emp_3)
 
 print(emp_3.fullname(), '-', emp_3.email, '-', emp_3.pay)
 print(emp_4.fullname(), '-', emp_4.email, '-', emp_4.pay)
-print(emp_5.fullname(), '-', emp_5.email, '-', emp_5.pay)
+print(emp_5.fullname(), '-', emp_5.email, '-', emp_5.pay,'\n')
+# #==================================================================#
 
-print(Employee.__dict__)
+# The inheritance works. Apply_raise is defined in class Employee. Which now has been used for class Developer.
+print(dev_1.pay)
+dev_1.apply_raise()
+print(dev_1.pay)
