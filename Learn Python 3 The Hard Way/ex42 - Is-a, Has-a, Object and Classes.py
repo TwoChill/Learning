@@ -1,3 +1,7 @@
+import os
+os.system('clear')
+
+
 class Employee:
 
     # This is a Class variable
@@ -40,22 +44,58 @@ class Employee:
     def static_func():
         pass
 
+
 class Developer(Employee):
-    pass
+    def __init__(self, first, last, pay, program_lang):
+        # Class Employee handels the (first, last and pay) arguments
+        super().__init__(first, last, pay)
+        self.program_lang = program_lang
+
+    raise_amount_var = 1.50
+
+
+class Manager(Employee):
+    # !! Never pass in meutable datatypes as default args.
+    def __init__(self, first, last, pay, employees=None):
+        # Class Employee handels the (first, last and pay) args.
+        super().__init__(first, last, pay)
+        self.employees = employees
+
+        if employees is None:
+            self.employees == []
+        else:
+            self.employees = employees
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_emp(self):
+        for emp in self.employees:
+            print(self.fullname(), 'manages over:', emp.fullname())
+
 
 # Create instanse of Class Employee / Developer
-emp_1 = Employee('Michael', 'Python', 50000)  # Initsiate with init arugments
-dev_1 = Developer('Maud', 'Ruby', 40000)  # Initsiate with init arugments
+emp_1 = Employee('Maud', 'Ruby', 50000)  # Initsiate with init arugments
+# Initsiate with init arugments
+dev_1 = Developer('Michael', 'deF', 40000, 'Python')
 # print(help(Developer))
+mng_1 = Manager('Mattijs', 'Koning', 100000, [emp_1, dev_1])
 
 #==================================================================#
 #==================================================================#
 #==================================================================#
 
 print(emp_1.fullname())
-print(emp_1.fullname())
-print(dev_1.email, '\n')
-print(dev_1.email, '\n')
+print(emp_1.email, '\n')
+print(dev_1.email)
+print('Primary Language:', dev_1.program_lang, '\n')
+print(mng_1.fullname())
+print(mng_1.email, '\n')
 
 #==================================================================#
 # Class methode is called and printed out.
@@ -68,14 +108,18 @@ print(f'{dev_1.fullname()} has a pay of {dev_1.pay}')
 print(f'{dev_1.fullname()} got a raise. (* {dev_1.raise_amount_var})')
 dev_1.apply_raise()
 print(f'{dev_1.fullname()} has a pay of {dev_1.pay}\n')
-
+#------------------------------------------------------------------#
+print(f'{mng_1.fullname()} has a pay of {mng_1.pay}')
+print(f'{mng_1.fullname()} got a raise. (* {mng_1.raise_amount_var})')
+mng_1.apply_raise()
+print(f'{mng_1.fullname()} has a pay of {mng_1.pay}\n')
 #==================================================================#
 # With (<instance>.__dict__) you can see what values that instance or class has.
 
 # print(Employee.__dict__)
 print(emp_1.__dict__)
-# print(dev_1.__dict__)
-
+print(dev_1.__dict__)
+print(mng_1.__dict__, '\n')
 #==================================================================#
 # You can change the class variable of the entere class OR just for a instance
 
@@ -119,10 +163,27 @@ emp_5 = Employee.from_string(new_emp_3)
 
 print(emp_3.fullname(), '-', emp_3.email, '-', emp_3.pay)
 print(emp_4.fullname(), '-', emp_4.email, '-', emp_4.pay)
-print(emp_5.fullname(), '-', emp_5.email, '-', emp_5.pay,'\n')
+print(emp_5.fullname(), '-', emp_5.email, '-', emp_5.pay, '\n')
 # #==================================================================#
 
-# The inheritance works. Apply_raise is defined in class Employee. Which now has been used for class Developer.
+# The inheritance works. Apply_raise is defined in class Employee. Which now has been used in the class Developer.
 print(dev_1.pay)
 dev_1.apply_raise()
-print(dev_1.pay)
+print(dev_1.pay, '\n')
+# #==================================================================#
+
+# Created manger class with abilities to do things
+mng_1.print_emp()
+print('\n')
+
+mng_1.add_emp(emp_3)
+mng_1.add_emp(emp_4)
+mng_1.add_emp(emp_5)
+mng_1.print_emp()
+print('\n')
+
+mng_1.remove_emp(emp_3)
+mng_1.remove_emp(emp_5)
+
+mng_1.print_emp()
+# #==================================================================#
