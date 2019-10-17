@@ -17,6 +17,9 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
+import os
+import time
+os.system('clear')
 
 # Load dataset
 # This dataset has 5 collums. The 5th coloum is the species of the flower.
@@ -27,5 +30,10 @@ url = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv'
 # Here you'll specifiy the names of each colum.
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 
-# Here you'll load the dataset with pandas
-dataset = pandas.read_csv(url, names)
+# Here you'll load the dataset with pandas.
+dataset = pandas.read_csv(url, names=names)
+
+# SHAPE
+
+print('>>> This is the data inside the Iris dataset <<<\n\n', dataset)
+print('\n>>> The shape of the dataset is:', dataset.shape)
